@@ -1,0 +1,35 @@
+<div class="container-fluid p-4 bg-primary text-light text-center">
+    <h1><b>Sistema di Posta di Gabbo il Re</b></h1>
+    <p class="lead">Benvenuto nel sistema di posta elettronica di Gabbo il Re. Scrivi, invia e ricevi le tue email in modo semplice e veloce!</p>
+</div>
+<div class="container mt-4">
+    <h3>Scrivi una Email:</h3>
+    <form (submit)="salvaEmail()" class="was-validated" style="max-width: 60%; margin: auto;">
+        <div class="mb-3 mt-3">
+            <label for="uname" class="form-label">Mittente:</label>
+            <input type="text" class="form-control" id="uname" placeholder="Indirizzo email del mittente" name="mittente" required [(ngModel)]="mittente">
+            <div class="valid-feedback">Valido</div>
+            <div class="invalid-feedback">Inserisci l'indirizzo email del mittente.</div>
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="subject" class="form-label">Oggetto:</label>
+            <input type="text" class="form-control" id="subject" placeholder="Oggetto dell'email" name="oggetto" required [(ngModel)]="oggetto">
+            <div class="valid-feedback">Valido</div>
+            <div class="invalid-feedback">Inserisci l'oggetto dell'email.</div>
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="message" class="form-label">Testo:</label>
+            <textarea class="form-control" id="message" placeholder="Testo dell'email" name="testo" required [(ngModel)]="testo"></textarea>
+            <div class="valid-feedback">Valido</div>
+            <div class="invalid-feedback">Inserisci il testo dell'email.</div>
+        </div>
+        <div class="mb-3">
+            <label for="pwd" class="form-label">Destinatario:</label>
+            <input type="text" class="form-control" id="pwd" placeholder="Indirizzo email del destinatario" name="destinatario" required [(ngModel)]="destinatario">
+            <div class="valid-feedback">Valido</div>
+            <div class="invalid-feedback">Inserisci l'indirizzo email del destinatario.</div>
+        </div>
+        <button type="submit" class="btn btn-success">Salva ed Invia</button>
+    </form>
+</div>
+<app-sent-mail [emails]="emails"></app-sent-mail>
